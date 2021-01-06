@@ -1,4 +1,5 @@
-env: test
-user:
-  username: test
-  password: test
+data:
+  env: test
+  user:
+    username: test
+    password: test
