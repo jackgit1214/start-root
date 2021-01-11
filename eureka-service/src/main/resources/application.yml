@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: server1
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/jackgit1214/start-root #配置文件所在仓库
+          username: XXXXXX
+          password: XXXXXX
+          default-label: master #配置文件分支
+          search-paths: cloudConfig/config  #配置文件所在根目录
+        prefix: /config

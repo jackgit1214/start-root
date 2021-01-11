@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: eureka2
+
+server:
+  port: 8102
+eureka:
+  instance:
+    hostname: server2
+  client:
+    # 这里是集群，则不需要配置这两个
+    # 表示是否注册自身到eureka服务器
+    register-with-eureka: true
+    # 是否从eureka上获取注册信息
+    fetch-registry: true
+    service-url:
+      defaultZone: http://server1:8101/eureka/
