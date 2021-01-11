@@ -1,3 +1,12 @@
+利用CONSUL做为服务注册中心，搭建Provider与Consumer项目，以及作为配置中心
+1、consul的安装与使用
+
+2、搭建服务提供者与消费用
+
+3、高可用的搭建
+
+4、配置中心用法
+
 #consul windows下的安装与使用
 
 1、添加环境变量：CONSUL_HOME 指定consul所在路径
@@ -17,7 +26,7 @@
      consul leave 
      出现 Graceful leave complete 字样 ，说明停止成功。
      
-# spring cloud consul 搭建服务提供者
+# spring cloud consul 搭建服务提供者与消费用
     这里用一个项目实现，提供者与消费者，分别启动
 
    1、创建Spring boot 项目 ,pom 参考consul-server 例子中的pom 文件
