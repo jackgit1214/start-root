@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: consul-consumer
+  cloud:
+    consul:
+      discovery:
+        register: false
+server:
+  port: 9102
+
+endpoints:
+  health:
+    sensitive: false
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+
+management:
+  security:
+    enabled: false
