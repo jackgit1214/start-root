@@ -43,7 +43,8 @@
     5)、register-with-eureka与fetch-registry分别设为true,分别访问相应地址验证,可以看到两个中心是同步的
     
 # spring-cloud-config基本应用与配置
-    在applicaton.xml增加config的配置片段，如下
+    1、在applicaton.xml增加config的配置片段，如下
+    
     spring:
       cloud:
         config:
@@ -55,3 +56,8 @@
               default-label: master #配置文件分支
               search-paths: cloudConfig/config  #配置文件所在根目录
             prefix: /config
+            
+     2、在启动类中增加 @EnableConfigServer
+     
+     3、uri为Git路径，search-paths为GIT项目下配置文件所在路径，prefix为一个路径前缀，
+        在eurekaServer中配置时，需要增加此配置，否则会出现js以及css的404错误。
