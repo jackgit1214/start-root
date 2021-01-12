@@ -1,0 +1,35 @@
+spring:
+  profiles:
+    active: dev
+
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://server1:8101/eureka
+
+---
+spring:
+  profiles: prod
+  application:
+    name: config-eureka-client
+  cloud:
+    config:
+      label: master
+      profile: prod
+      discovery:
+        enabled: true
+        service-id: eureka1
+
+
+---
+spring:
+  profiles: dev
+  application:
+    name: config-eureka-client
+  cloud:
+    config:
+      label: master  #指定仓库分支
+      profile: dev   #指定版本 本例中建立了dev 和 prod两个版本
+      discovery:
+        enabled: true  # 开启
+        service-id: eureka1 # 指定配置中心服务端的server-id
