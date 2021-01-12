@@ -54,4 +54,13 @@
   3、创建GitAutoRefreshConfig，添加注解@ConfigurationProperties(prefix = "data")，并添加相应属性
      创建ConfigController类
      
-  4、访问localhost:8080/autoShow ,应该能得到想要的结果 。  
+  4、访问localhost:8080/autoShow ,应该能得到想要的结果 。 
+  
+  5、此时，修改配置文件内容后，是不能自动刷新的，如果实时刷新需要按以下部署进行
+  
+     1）引入 spring-boot-starter-actuator 包
+     2）在yml文件中增加actuator的配置，参见文件中的management部分。
+     3）控制类上加上@RefreshScope 注解，然后post调用http://localhost:8080/actuator/refresh，
+        可用postman工具执行，即可实现刷新
+     4）另一种方式是引入Spring Cloud Bus，利用消息队列进行刷新
+       
