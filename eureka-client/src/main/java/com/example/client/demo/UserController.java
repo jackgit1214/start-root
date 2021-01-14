@@ -31,8 +31,8 @@ public class UserController {
         userPojoList.add(new UserPojo("tom","man",15));
         userPojoList.add(new UserPojo("jack","man",18));
         userPojoList.add(new UserPojo("ajan","wuman",17));
-
         return userPojoList;
+
     }
 
     @GetMapping("/getUserPojo")
