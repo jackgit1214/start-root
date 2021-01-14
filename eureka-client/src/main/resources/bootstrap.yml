@@ -11,7 +11,7 @@ eureka:
 spring:
   profiles: prod
   application:
-    name: config-eureka-client
+    name: eureka-client
   cloud:
     config:
       label: master
@@ -25,7 +25,7 @@ spring:
 spring:
   profiles: dev
   application:
-    name: config-eureka-client
+    name: eureka-client
   cloud:
     config:
       label: master  #指定仓库分支
