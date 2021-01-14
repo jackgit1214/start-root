@@ -1,0 +1,20 @@
+#spring:
+#  application:
+#    name: test
+server:
+  port: 8090
+
+management:
+  endpoint:
+    shutdown:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+data:
+  env: NaN
+  user:
+    username: NaN
+    password: NaN
