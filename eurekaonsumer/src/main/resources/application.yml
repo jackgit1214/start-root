@@ -18,3 +18,4 @@ data:
   user:
     username: NaN
     password: NaN
+  test: myTestAuto
