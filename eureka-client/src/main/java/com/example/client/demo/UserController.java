@@ -1,7 +1,6 @@
 package com.example.client.demo;
 
 
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -14,9 +13,17 @@ public class UserController {
     @PostMapping("/getUser")
     @ResponseBody
     public List<UserPojo> getUser(@RequestParam("userName") String userName){
-        System.out.println("---"+userName);
-        return getUserPojos();
 
+        List<UserPojo> userPojoList = getUserPojos();
+
+        List<UserPojo> test = new ArrayList<UserPojo>();
+        userPojoList.stream().filter(u->{
+           return u.getUserName().equals(userName);
+        }).forEach(u->{
+            test.add(u);
+        });
+
+        return test;
     }
 
     @GetMapping("/getUser1")
